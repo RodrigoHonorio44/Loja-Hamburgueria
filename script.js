@@ -51,6 +51,7 @@ function addToCart(name, price) {
             price,
             quantity: 1,
 
+
         })
     }
 
@@ -71,6 +72,7 @@ function updateCartModal() {
                 <p class='font-medium'>${item.name}</p>
                 <p>Qtd: ${item.quantity}</p>
                 <p class='font-medium mt-2'>R$${item.price.toFixed(2)}</p>
+                
             </div>
             
                 <button class="remove-from-cart-btn" data-name="${item.name}">
@@ -156,10 +158,11 @@ checkoutBtn.addEventListener('click', function () {
         )
     }).join('')
     console.log(cartItems)
+    const menssage1 = encodeURIComponent(cartTotal.textContent)
     const message = encodeURIComponent(cartItems)
-    const phone = "21975966330"
+    const phone = "5521975966330"
 
-    window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "_blank")
+    window.open(`https://wa.me/${phone}?text=${message}  ${menssage1}  Endereço: ${addressInput.value}`, "_blank")
     cart = []
     updateCartModal()
 })
