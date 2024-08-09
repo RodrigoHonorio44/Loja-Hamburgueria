@@ -50,6 +50,7 @@ function addToCart(name, price) {
             name,
             price,
             quantity: 1,
+
         })
     }
 
@@ -153,7 +154,8 @@ checkoutBtn.addEventListener('click', function () {
         return (
             `${item.name} Quantidade: (${item.quantity}) Preço: R${item.price} |`
         )
-    }).join('cartItems')
+    }).join('')
+    console.log(cartItems)
     const message = encodeURIComponent(cartItems)
     const phone = "21975966330"
 
